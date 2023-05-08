@@ -3,6 +3,7 @@ import './App.css'
 
 import {useState} from 'react'
 import Todos from './components/Todos'
+import AddTodo from './components/AddTodo'
 
 const todosData = [
   {
@@ -31,13 +32,31 @@ const todosData = [
   }
 ]
 
+type TodoType = {
+  id:number;
+  title:string;
+}
+
 function App() {
 
   const [todos, settodos] = useState(todosData)
+
+  const handleDeleteTodo = (id:number)=>{
+    // console.log(id);
+    const filterData = todos.filter(todo=> todo.id !== id);
+    settodos(filterData)
+}
+
+const handleAddNewTodo = (newTodo:TodoType)=>{
+  // console.log(newTodo);
+  settodos(prevTodos =>[...prevTodos,newTodo])
+   
+}
   
   return (
     <>
-      <Todos todos={todos}></Todos>
+       <AddTodo handleAddNewTodo={handleAddNewTodo}></AddTodo>
+      <Todos todos={todos} handleDeleteTodo={handleDeleteTodo}></Todos>
     </>
   )
 }

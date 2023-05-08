@@ -14,3 +14,21 @@
     color: red;
     margin-left: 5px;
 }
+
+.addTodo{
+    text-align: center;
+}
+
+.titleField{
+    padding: 8px 20px;
+}
+
+.input-btn{
+    padding: 8px 20px;
+    margin-left: 10px; 
+}
+
+.addTodo p {
+    font-size: 16px;
+    font-weight: 600;
+}

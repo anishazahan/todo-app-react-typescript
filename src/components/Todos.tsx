@@ -5,16 +5,20 @@ type todosType= {
     todos:{
         id: number;
         title: string;
-    }[]
+    }[];
+    handleDeleteTodo: (id: number) => any;
+
 }
 
 
-const Todos = ({todos}:todosType) => {
-    console.log(todos);
+
+
+const Todos = (props:todosType,) => {
+    // console.log(props);
   return (
     <div className="todos">
       {
-          todos.map(todo => < Todo key={todo.id} todo={todo}/>)
+         props.todos.map(todo => < Todo key={todo.id} todo={todo} handleDeleteTodo={props.handleDeleteTodo}  />)
       }
     </div>
   )
