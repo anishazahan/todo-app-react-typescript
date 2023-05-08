@@ -24,7 +24,6 @@ const Todo = (props:todoType) => {
         <h2>{id}</h2>
         <h2>{title}</h2>
         <div className="">
-            <button>Edit</button>
             <button onClick={()=>deleteTodo(id)} className='delete'>Delete</button>
         </div>
     </div>
